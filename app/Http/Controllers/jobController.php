@@ -24,5 +24,10 @@ class jobController extends Controller
         return redirect('AdminDash');
     }
 
-    
+    public function display(){
+        $sql = "SELECT Title AND 'Description' FROM job_posts"; 
+        $result = DB::select($sql);
+
+        return view('jobcircular', compact('result'));
+    }
 }

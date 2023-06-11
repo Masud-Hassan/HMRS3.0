@@ -8,7 +8,7 @@
   </head>
   <body>
     <div style="position:absolute; top: 3%; right: 3%">
-      <button class="apply">Apply For Job</button>
+      <a href="{{url('jobcircular')}}"><button class="apply">Apply For Job</button></a>
     </div>
     <div>
       <div style="display:flex; align-items:center; justify-content:center">
