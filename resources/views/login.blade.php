@@ -20,15 +20,21 @@
       </div>
       <div class="container">
           <header style="color: #826AFB; font-size: 300%">LOGIN</header>
-          <form action="#" class="form">
+          @if (session('error'))
+            <div class="alert alert-danger" style="color: red; justify-content:center; text-align:center">
+                {{ session('error') }}
+            </div>
+          @endif
+          <form action="{{url('login')}}" class="form" method="POST">
+            @CSRF
             <div class="input-box">
               <label>Email</label>
-              <input type="text" placeholder="Enter email address" required />
+              <input type="email" name="email" placeholder="Enter email address" required />
             </div>
 
             <div class="input-box">
               <label>Password</label>
-              <input type="text" placeholder="Enter Password" required />
+              <input type="password" name="pass" placeholder="Enter Password" required />
             </div>
 
             <div class="gender-box">

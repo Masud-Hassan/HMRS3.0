@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\jobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,14 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [loginController::class, 'index']);
+Route::post('/login', [loginController::class, 'authenticate']);
 
 Route::get('/register', [registerController::class, 'index']);
+Route::post('/register', [registerController::class, 'register']);
+
+Route::get('/AdminDash', function () {
+    return view('AdminDash');
+});
+
+Route::get('/jobpost', [jobController::class, 'index']);
+Route::post('/jobpost', [jobController::class, 'post']);
