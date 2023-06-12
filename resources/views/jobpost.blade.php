@@ -10,7 +10,7 @@
     <section class="container">
       <header><u>Job Post</u></header>
       <div style="overflow-y:scroll; overflow-x:hidden; max-height: 800px">
-        <form action="{{url('register')}}" class="form" method="POST">
+        <form action="{{url('jobpost')}}" class="form" method="POST">
           @CSRF
           <div style="position:relative; left:43%">JOB DETAILS</div>            
           <br>

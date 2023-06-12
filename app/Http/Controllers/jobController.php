@@ -25,9 +25,8 @@ class jobController extends Controller
     }
 
     public function display(){
-        $sql = "SELECT Title AND 'Description' FROM job_posts"; 
+        $sql = "SELECT * FROM job_posts"; 
         $result = DB::select($sql);
-
         return view('jobcircular', compact('result'));
     }
 }

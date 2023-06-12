@@ -33,18 +33,18 @@ class loginController extends Controller
             if(Hash::check($pass, $hashedPass))
             {            
                 //Checking Attendance
-                $sql = "SELECT * FROM attendance WHERE Email = ?";
+                $sql = "SELECT * FROM attendance WHERE Email = ? AND Date = ?";
                 
-                $result2 = DB::select($sql, [$email]);
+                $result2 = DB::select($sql, [$email, $date]);
                 
-                if (empty($result2)) {
+                if ($result2 == null) {
                     $attend = [
                         'Email' => $request->input('email'),
                         'Date' => $date,
                         'Present?' => "Yes",
                     ];
                     DB::table('attendance')->insert($attend);
-                } 
+                }
 
                 Session::put('email', $email);
                 
