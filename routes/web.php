@@ -33,3 +33,5 @@ Route::get('/AdminDash', function () {
 Route::get('/jobpost', [jobController::class, 'index']);
 Route::post('/jobpost', [jobController::class, 'post']);
 Route::get('/jobcircular', [jobController::class, 'display']);
+Route::post('/apply', [jobController::class, 'application']);
+Route::post('/appsubmit', [jobController::class, 'appSubmit']);
